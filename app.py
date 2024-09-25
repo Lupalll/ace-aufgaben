@@ -48,3 +48,14 @@ async def sieve_of_eratosthenes(limit: int):
                 is_prime[multiple] = False
     
     return[num for num, prime in enumerate(is_prime) if prime]
+
+
+@app.get("/number/{limit}")
+async def fib(limit: int, a=0, b=1):
+    n = limit
+    a, b = 0, 1 #beiden ersten fib nummern
+
+    for _ in range(1, n+1): #fib wird stdrt bei 0 angefangen aber hier bei 1 deswegen +1
+        a, b = b, a+b
+
+    return{"limit": limit, "number": a}
