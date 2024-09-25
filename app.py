@@ -6,7 +6,7 @@ app = FastAPI()
 async def api():
     return {"message": "Hello World"}
 
-#eigentliche aufgabe
+#Aufgabe 1
 @app.get("/tempcel/{celsius}") #eingabe der Zahl für die Umrechung
 async def celToKel(celsius: float):
     kelvin_add = 273.15
@@ -27,7 +27,7 @@ async def kelToCel(kelvin: float):
         "celsius": result        
     }
 
-
+#Aufgabe 2
 #zahl hat divisor der kleiner oder gleich quadratwurzel der zahl entspricht
 def is_prime(num):
     if num <= 1:
@@ -49,13 +49,13 @@ async def sieve_of_eratosthenes(limit: int):
     
     return[num for num, prime in enumerate(is_prime) if prime]
 
-
+#Aufgabe 3
 @app.get("/number/{limit}")
 async def fib(limit: int, a=0, b=1):
     n = limit
     a, b = 0, 1 #beiden ersten fib nummern
 
-    for _ in range(1, n+1): #fib wird stdrt bei 0 angefangen aber hier bei 1 deswegen +1
+    for _ in range(1, n+1): #fib wird standartmässig bei 0 angefangen aber hier bei 1 deswegen n+1
         a, b = b, a+b
 
     return{"limit": limit, "number": a}
