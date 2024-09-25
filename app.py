@@ -4,7 +4,7 @@ app = FastAPI()
 
 @app.get("/api")
 async def api():
-    return {"message": "Hello from your local FastAPI!"}
+    return {"message": "Hello World"}
 
 #eigentliche aufgabe
 @app.get("/tempcel/{celsius}") #eingabe der Zahl für die Umrechung
