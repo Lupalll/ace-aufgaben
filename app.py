@@ -30,9 +30,9 @@ async def kelToCel(kelvin: float):
 
 #Aufgabe 2
 @app.get("/prime/{limit}")
-async def sieve_of_eratosthenes(limit: int):
-    is_prime = [True] * (limit + 1)
-    is_prime[0], is_prime[1] = False, False
+async def sieve_of_eratosthenes(limit: int)
+    is_prime = [True] * (limit + 1) #erstellt eine Liste welche alle Zahlen auf True setzt
+    is_prime[0], is_prime[1] = False, False #0,1 keine prim zahlen also False
     
     for num in range(2, int(limit**0.5) + 1):
         if is_prime[num]:
